@@ -27,29 +27,29 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 
-	UPROPERTY(EditAnywhere, Category = Camera)
+	UPROPERTY(VisibleAnywhere, Category = Camera)
 		class USpringArmComponent* SpringArm;
 
 	class UCameraComponent* Camera;
 
-	UPROPERTY(EditAnywhere, Category = Display)
+	UPROPERTY(VisibleAnywhere, Category = Display)
 		class UStaticMeshComponent* Mesh;	// TODO: Don't really need a mesh
 
-	UPROPERTY(EditAnywhere, Category = Camera)
-		float TargetArmLength = 400.0f;
-	UPROPERTY(EditAnywhere, Category = Camera)
+	UPROPERTY(VisibleAnywhere, Category = Camera)
+		float TargetArmLength = 1000.0f;
+	UPROPERTY(VisibleAnywhere, Category = Camera)
 		bool bCameraLag = true;
-	UPROPERTY(EditAnywhere, Category = Camera)
+	UPROPERTY(VisibleAnywhere, Category = Camera)
 		float CameraLagSpeed = 5.0f;
 
-	UPROPERTY(EditAnywhere, Category = Movement)
+	UPROPERTY(VisibleAnywhere, Category = Movement)
 		float MovementScaler = 400.0f;
 
-	UPROPERTY(EditAnywhere, Category = Movement)
+	UPROPERTY(VisibleAnywhere, Category = Movement)
 		float ZoomMin = 50.0f;
-	UPROPERTY(EditAnywhere, Category = Movement)
+	UPROPERTY(VisibleAnywhere, Category = Movement)
 		float ZoomMax = 5000.0f;
-	UPROPERTY(EditAnywhere, Category = Movement)
+	UPROPERTY(VisibleAnywhere, Category = Movement)
 		float ZoomFactor = 50.0f;
 
 	// TODO: Remove UPROPERTY where not needed

@@ -3,7 +3,7 @@
 
 #include "ItemSpawner.h"
 #include "Engine/World.h"
-//#include "../Resources/Resource.h"
+#include "../Resources/ResourceBase.h"
 
 // Sets default values
 AItemSpawner::AItemSpawner()
@@ -17,6 +17,8 @@ AItemSpawner::AItemSpawner()
 void AItemSpawner::BeginPlay()
 {
 	Super::BeginPlay();
+
+	Spawn();
 	
 }
 
@@ -29,17 +31,17 @@ void AItemSpawner::Tick(float DeltaTime)
 
 void AItemSpawner::Spawn()
 {
-	//if (ToSpawn)
-	//{
-	//	UWorld* World = GetWorld();
-	//	if (World)
-	//	{
-	//		FActorSpawnParameters SpawnParams;
-	//		FVector SpawnLocation = GetActorLocation();
-	//		FRotator SpawnRotation = GetActorRotation();
-
-	//		//World->SpawnActor<Resource>(ToSpawn, SpawnLocation, SpawnRotation, SpawnParams);
-	//	}
-	//}
+	if (ToSpawn)
+	{
+		UWorld* World = GetWorld();
+		if (World)
+		{
+			FActorSpawnParameters SpawnParams;
+			FVector SpawnLocation = GetActorLocation();
+			FRotator SpawnRotation = GetActorRotation();
+			// TODO: Add randomness to spawn (Velocity?)
+			World->SpawnActor<AResourceBase>(ToSpawn, SpawnLocation, SpawnRotation, SpawnParams);
+		}
+	}
 }
 

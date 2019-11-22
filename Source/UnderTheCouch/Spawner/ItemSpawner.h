@@ -23,8 +23,8 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	//UPROPERTY(EditAnywhere)
-	//	TSubclassOf<class Resource> ToSpawn;
+	UPROPERTY(VisibleAnywhere)
+		TSubclassOf<class AResourceBase> ToSpawn;
 
 	UFUNCTION(BlueprintCallable)
 		void Spawn();

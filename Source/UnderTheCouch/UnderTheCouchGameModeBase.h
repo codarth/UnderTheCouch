@@ -14,4 +14,8 @@ class UNDERTHECOUCH_API AUnderTheCouchGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
 	
+
+public:
+	UPROPERTY(VisibleAnywhere, Category = resources)
+		int32 FoodAmount = 0;
 };

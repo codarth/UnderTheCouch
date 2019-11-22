@@ -118,7 +118,6 @@ void APlayerNCamera::Zoom(float Value)
 	float TargetLength = SpringArm->TargetArmLength;
 	TargetLength = FMath::Clamp(TargetLength + Value * ZoomFactor, ZoomMin, ZoomMax);
 	SpringArm->TargetArmLength = TargetLength;
-	UE_LOG(LogTemp, Warning, TEXT("%f"), SpringArm->TargetArmLength);
 }
 
 

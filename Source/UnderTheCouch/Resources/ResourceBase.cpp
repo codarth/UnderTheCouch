@@ -10,10 +10,13 @@ AResourceBase::AResourceBase()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
-	RootComponent = CreateDefaultSubobject<USceneComponent>("RootComponent");
+	//RootComponent = CreateDefaultSubobject<USceneComponent>("RootComponent");
 
 	Mesh = CreateDefaultSubobject<UStaticMeshComponent>("Mesh");
-	Mesh->SetupAttachment(RootComponent);
+	RootComponent = Mesh;
+	//Mesh->SetupAttachment(RootComponent);
+
+	Tags.Add("Resource");
 }
 
 // Called when the game starts or when spawned

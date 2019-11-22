@@ -23,6 +23,9 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	UPROPERTY(EditAnywhere, Category = Display)
+	UPROPERTY(VisibleAnywhere, Category = Display)
 		UStaticMeshComponent* Mesh;
+
+	UPROPERTY(VisibleAnywhere, Category = Resource)
+		float ResourceAmount = 10.0f;
 };
